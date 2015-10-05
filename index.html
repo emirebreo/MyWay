@@ -21,7 +21,7 @@
       .directive('liHelloSearchEngines', function () {
         return {
           restrict: 'E',
-          template: '<div> magic sauce generated @{{date}}</div>',
+          template: '<div> magic sauce generated at {{date}}</div>',
           link: function ($scope) {
             $scope.date = new Date();
           }
