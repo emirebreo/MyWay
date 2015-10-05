@@ -18,12 +18,17 @@
 
       angular.module('li.test.hello-search-engines', [])
 
-      .directive('liHelloSearchEngines', function () {
+      .directive('liHelloSearchEngines', function ($http) {
         return {
           restrict: 'E',
           template: '<div> magic sauce generated at {{date}}</div>',
           link: function ($scope) {
             $scope.date = new Date();
+
+            $http.get('foo.json').then(function (response) {
+              console.log(response);
+            });
+   
           }
         }
       });
