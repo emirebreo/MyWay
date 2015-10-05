@@ -21,12 +21,12 @@
       .directive('liHelloSearchEngines', function ($http) {
         return {
           restrict: 'E',
-          template: '<div> magic sauce generated at {{date}}</div>',
+          template: '<div> magic sauce generated at {{date}} <br><br> {{frabjous}}</div>',
           link: function ($scope) {
             $scope.date = new Date();
 
-            $http.get('foo.json').then(function (response) {
-              console.log(response);
+            $http.get('jabby.json').then(function (res) {
+              $scope.frabjous = res.data.galumph.join(' ');
             });
    
           }
@@ -38,9 +38,9 @@
   </head>
 
   <body ng-app="li.apps.test">
-    <h2>Hello Search Engines.</h2>
+    <h2>Hello There</h2>
     <li:hello-search-engines></li:hello-search-engines>
-    <p>thank you</p>
+    <p>eom</p>
   </body>
 
 </html>
