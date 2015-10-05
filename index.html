@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search Engine Crawler Test">
+    <meta name="author" content="lithium">
+    <title>Hello Search</title>
+
+    <script data-require="angular.js@1.4.7" data-semver="1.4.7" src="https://code.angularjs.org/1.4.7/angular.js"></script>
+ 
+    <script>
+ 
+      angular.module('li.apps.test', [
+        'li.test.hello-search-engines'
+      ]);
+
+      angular.module('li.test.hello-search-engines', [])
+
+      .directive('liHelloSearchEngines', function () {
+        return {
+          restrict: 'E',
+          template: '<div> magic sauce generated @{{date}}</div>',
+          link: function ($scope) {
+            $scope.date = new Date();
+          }
+        }
+      });
+ 
+    </script>
+  
+  </head>
+
+  <body ng-app="li.apps.test">
+    <h2>Hello Search Engines.</h2>
+    <li:hello-search-engines></li:hello-search-engines>
+    <p>thank you</p>
+  </body>
+
+</html>
+
